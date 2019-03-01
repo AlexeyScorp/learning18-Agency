@@ -1,0 +1,60 @@
+@import "color"
+@import "font"
+
+.logo:hover a
+  display: inline-block
+  transform: scale(1.1)
+
+#main_header
+  .nav_active
+    color: $em_gray
+
+#page_header-nav
+  .nav_active
+    color: $main_blue
+
+nav
+  .nav_waiting:hover
+    color: $main_blue
+    transform: scale(1.1)
+
+#page_header-nav:hover
+  background: $em_gray
+
+.button_click:hover
+  box-shadow: inset 0 0 15px 2px $white_text
+
+.client-name:hover
+  img
+    transform: scale(1.2)
+
+#profile
+  .profile-work_showcase-wrap
+    .profile-work_showcase:hover
+      background: $main_blue
+      img
+        opacity: 0.8
+
+
+#contact_us
+  form
+    input:hover,
+    textarea:hover
+      box-shadow: inset 0 0 10px 2px $white_text
+
+    input:active,
+    textarea:active
+      box-shadow: inset 0 0 10px 2px $main_blue
+
+    input:focus,
+    textarea:focus
+      box-shadow: inset 0 0 5px 2px $main_blue
+      background: $em_gray
+      text-shadow: 1px 1px $main_blue
+
+#contact_us-social
+  a:hover
+    box-shadow: inset 0 0 30px 1px $white_text
+    overflow: hidden
+    i
+      transform: scale(1.5)

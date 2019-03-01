@@ -1,0 +1,626 @@
+@import "font"
+@import "color"
+
+$static_width: 1170px
+
+#main_container
+  margin: 0 auto
+  min-width: $static_width
+  max-width: 1600px
+
+.container
+  margin: 0 auto
+  max-width: $static_width
+
+article, section
+  position: relative
+  box-sizing: border-box
+
+.media
+  position: relative
+
+  &:after
+    content: ""
+    display: block
+    clear: both
+
+  .media-left
+    position: relative
+    float: left
+    width: 50%
+    min-width: 570px
+
+  .media-right
+    position: relative
+    float: right
+    width: 50%
+    min-width: 570px
+
+#main_header
+  min-height: 989px
+  max-height: 1000px
+  background: url("../images/header_bg.jpg") fixed top center
+
+  .logo
+    padding: 31px 0 0 2px
+
+  .nav
+    position: absolute
+    margin: 0 0 0 -4px
+
+    ul
+      margin: 55px 0 0
+
+      li
+        margin-right: 26px
+        //padding: 0 28px 0 0
+        transition: transform 1s
+
+.logo
+  box-sizing: border-box
+  font-family: Montserrat, sans-serif
+  font-size: 34px
+  font-weight: 900
+
+.nav
+  display: inline-block
+
+  ul
+    -webkit-padding-start: 0
+    -moz-padding-start: 0
+
+  li
+    display: inline-block
+    position: relative
+    text-transform: uppercase
+    text-decoration: none
+    font-family: Lato, sans-serif
+    font-size: 15.5px
+    font-weight: 700
+    color: $white_text
+
+.button_click
+  box-sizing: border-box
+  width: 129px
+  height: 36px
+  outline: none
+  border: 0
+  border-radius: 18px
+  color: $white_text
+  cursor: pointer
+  font-family: Lato, sans-serif
+  font-size: 15px
+  font-weight: 400
+  text-align: center
+  transition: box-shadow 0.5s
+
+#main_header-nav
+  height: 70px
+  position: relative
+
+  .nav_active:before
+    content: ""
+    width: 110%
+    height: 8px
+    background: $main_blue
+    position: absolute
+    top: -324%
+    left: -5%
+    transition: width 1s
+
+#main_header-welcome
+  position: relative
+
+  #welcome-wrap-text
+    width: 580px
+    box-sizing: border-box
+    margin: 207px 0 0
+    padding: 0 3px
+
+    em
+      padding-left: 4px
+
+  #welcome-text
+    font-family: Montserrat, sans-serif
+    margin: 28px 0 0
+
+    span
+      display: inline-block
+      padding: 0 0 19px 0
+
+    #welcome-text-name_is
+      color: $white_text
+      font-size: 41.38px
+      font-weight: 700
+      line-height: 34.801px
+
+    #welcome-text-name
+      color: $main_blue
+      font-size: 41.38px
+      font-weight: 700
+      line-height: 34.801px
+      margin-left: 7px
+
+    #welcome-text-company
+      color:  #ffffff
+      font-size: 30px
+      font-weight: 400
+      line-height: 34.801px
+
+      & span:first-child
+        position: relative
+        margin-right: 29px
+
+      & span:first-child:after
+        content: "|"
+        display: inline-block
+        position: absolute
+        right: -19px
+        top: -3px
+
+  .main_paragraph
+    margin: 33px 0 79px 13px
+
+  button
+    margin-left: 19px
+    background: #00aeed
+
+#welcome-img
+  position: absolute
+  overflow: hidden
+  z-index: 1
+  margin: 99px 0 0 11px
+  display: inline-block
+  width: 651px
+  height: 820px
+  //background: url("../images/welcome.png") no-repeat
+  background-size: contain
+
+  img
+    width: 100%
+
+  @media screen and (min-width: 1304px)
+    width: 631px
+
+  @media screen and (max-width: 1280px)
+    margin: 99px 0 0 0
+    width: 582px
+
+@mixin padding-block($top,$right,$bottom,$left)
+  padding: $top+px $right+px $bottom+px $left+px
+
+#page_header-nav
+  margin: 0 auto
+  max-width: 1600px
+  width: 100%
+  position: fixed
+  top: 0
+  padding: 15px 0
+  background: fade-out($em_gray,0.2)
+  box-shadow: inset 0px -3px 20px 0px $white_text
+  z-index: 10
+  transition: background 1s
+  visibility: hidden
+
+  @media screen and (max-width: 1270px)
+    padding: 5px 0
+
+    .nav
+      min-width: 510px
+      ul
+        margin: 8px auto
+        li
+          margin-right: 26px
+          font-size: 10px
+          transition: transform 1s
+
+  .media
+    position: relative
+
+    .media-left
+      @media screen and (max-width: 1270px)
+        width: 19%
+        min-width: 160px
+        margin-left: 15px
+        font-size: 26px
+
+    .nav
+      ul
+        li
+          margin-right: 26px
+          //padding: 0 28px 0 0
+          transition: transform 1s
+
+      .nav_active:before
+        content: ""
+        width: 110%
+        height: 8px
+        background: $main_blue
+        position: absolute
+        top: -200%
+        left: -5%
+        transition: width 1s
+
+        @media screen and (max-width: 1270px)
+          top: -360%
+
+
+
+#about
+  min-height: 526px
+  margin-top: -46px
+  @include padding-block(105,0,0,0)
+  background: $main_blue
+
+  .media-left
+    box-sizing: border-box
+    @include padding-block(0,100,0,24)
+
+    button
+      margin: 40px 0 0 -7px
+      background: #3b4374
+
+  .media-right
+    .main_paragraph
+      margin: 80px 0 0 25px
+
+#services
+  @include padding-block(125,0,0,0)
+  min-height: 629px
+  background: #007af3
+
+  .caption_one
+    text-align: center
+
+  #services-inf
+    display: flex
+    justify-content: space-between
+    padding-top: 38px
+
+    article
+      display: inline-block
+      width: 30%
+      padding-left: 88px
+
+      .services_connexion:before
+        content: url("../images/connexion.svg")
+        position: absolute
+        left: 0
+
+      .services_watch:before
+        content: url("../images/watch.svg")
+        position: absolute
+        left: 0
+
+      .services_job:before
+        content: url("../images/job.svg")
+        position: absolute
+        left: 0
+
+
+#profile
+  @include padding-block(118,0,0,0)
+
+  header
+    padding-bottom: 30px
+
+  .caption_one
+    text-align: center
+    padding: 0
+
+  .profile-work_showcase-wrap
+    .profile-work_showcase
+      display: flex
+      justify-content: center
+      float: left
+      overflow: hidden
+
+      a
+
+        img
+          display: block
+
+  .media-left
+    .profile-work_showcase
+      &:nth-child(1)
+        width: 100%
+        //width: 800px
+        //height: 417px
+
+      &:nth-child(2)
+        width: 50%
+        //width: 400px
+        //height: 256px
+
+      &:nth-child(3)
+        width: 50%
+        //width: 400px
+        //height: 256px
+
+  .media-right
+    .profile-work_showcase
+      &:nth-child(1)
+        width: 50%
+        //width: 400px
+        //height: 673px
+
+      &:nth-child(2)
+        width: 50%
+        //width: 50%
+        //height: 417px
+
+      &:nth-child(3)
+        width: 50%
+        //width: 50%
+        //height: 256px
+
+#client
+  height: 753px
+  @include padding-block(126,0,0,0)
+  background: url("../images/client_bg.jpg") center
+
+  .caption_one
+    text-align: center
+
+  .main_paragraph
+    max-width: 535px
+    margin: 0 auto
+    padding: 4px 0 0
+    text-align: center
+
+  #client-name_wrap
+    display: flex
+    justify-content: space-between
+    align-items: center
+    margin: 116px 0
+
+    .client-name
+      img
+        transition: transform 0.5s
+
+#blog
+  min-height: 1000px
+  @include padding-block(135,0,0,0)
+  margin-bottom: 24px
+
+  header
+    .caption_one
+      padding: 0 0 3px
+      line-height: 32px
+      //margin-left: -5px
+
+    h3
+      text-align: left
+
+    p
+      padding: 4px 0
+      color: #3b3b3b
+
+  .blog-wrap-all_big
+    display: block
+    position: relative
+    width: 569px
+    height: 464px
+    margin-bottom: 30px
+
+    >.blog-article_wrap>.blog-article_medium>.blog_paragraph
+      padding: 44px 0 19px
+
+  .blog-wrap-all_small
+    display: block
+    position: relative
+    width: 569px
+    height: 232px
+    margin-bottom: 30px
+
+  .blog-article_wrap
+    position: absolute
+    width: inherit
+    bottom: 0
+
+  .blog-article_small
+    padding: 0 35px
+    width: 268px
+    height: 232px
+
+    &:nth-child(2)
+      float: right
+
+    time
+      margin: 30px
+
+  .blog-article_medium
+    padding: 0 40px
+    width: 569px
+    height: 232px
+
+    time
+      margin: 13px auto 0
+
+    h3
+      margin: 1px auto 23px
+
+  .blog-article_big
+    padding: 0 40px
+    width: 569px
+    height: 464px
+
+    time
+      margin: 45px
+
+
+    .blog-article_big-bottom
+      position: absolute
+      bottom: 0
+      left: 0
+      padding: 0 40px 45px
+
+      h3
+        margin: 7px
+
+  .media-left
+    article
+      //display: table-cell
+      background: #90d23d
+      float: left
+      margin: 0 auto 0 0
+
+    &>div
+      float: left
+
+  .media-right
+    article
+      //display: table-cell
+      background: #90d23d
+      float: right
+      margin: 0 0 0 auto
+
+    &>div
+      float: right
+
+#contact_us
+  background: url("../images/contact+footer_bg.jpg") fixed no-repeat bottom
+  min-height: 993px
+  @include padding-block(108,0,150,0)
+
+  h3
+    text-align: left
+    padding-top: 15px
+
+  .media-left
+    height: 500px
+
+    #contact_us-e_mail
+      position: relative
+      margin: 83px 0 0 0
+      padding-left: 105px
+
+      &:before
+        content: url("../images/e_mail.svg")
+        position: absolute
+        left: 0
+        top: 3px
+
+    #contact_us-phone
+      position: relative
+      margin: 47px 0 0 0
+      padding-left: 105px
+
+      &:before
+        content: url("../images/phone.svg")
+        position: absolute
+        left: 9px
+        top: 9px
+
+    #contact_us-address
+      position: relative
+      margin: 47px 0 0 0
+      padding-left: 105px
+
+      &:before
+        content: url("../images/address.svg")
+        position: absolute
+        left: 1px
+        top: 8px
+
+  .media-right
+    height: 500px
+
+    form
+      margin: 73px 0 0
+      @mixin pole_form($height)
+        border-radius: 15px
+        background-color: #2b2b2b
+        width: 359px
+        height: $height
+        box-sizing: border-box
+        border: none
+        outline: none
+        margin: 0 40px 17px 0
+        padding: 10px
+        color: $white_text
+        transition: box-shadow 1s
+
+      input
+        @include pole_form(34px)
+        vertical-align: baseline
+
+      textarea
+        @include pole_form(78px)
+        resize: none
+        vertical-align: top
+
+      button
+        display: block
+        font-size: 15px
+        margin: 10px 97px
+        background: $main_blue
+
+      label
+        font-family: Lato, sans-serif
+        color: $white_text
+        font-size: 17px
+        font-weight: 400
+        line-height: 24px
+        text-align: left
+        display: inline-block
+        width: 95px
+
+  #contact_us-social
+    margin-top: 37px
+    text-align: center
+    #contact_us-social-wrap
+      display: inline-block
+      position: relative
+    a
+      display: inline-block
+      position: relative
+      box-sizing: border-box
+      width: 56px
+      height: 56px
+      border: 4px solid $white_text
+      border-radius: 50%
+      margin-right: 26px
+      transition: box-shadow 1s
+
+
+      &:nth-last-child(1)
+        margin-right: 0
+
+      span
+        display: flex
+        justify-content: center
+        align-items: center
+        position: absolute
+        top: 0
+        bottom: 0
+        left: 0
+        right: 0
+        margin: auto
+
+        i
+          color: $white_text
+          font-size: 24.82px
+          font-weight: 400
+          text-align: center
+          transition: transform 0.5s
+          //transform: scaleX(1.0004)
+
+#page_footer
+  position: relative
+  margin: -150px auto 0
+  max-width: 1170px
+  height: 150px
+
+  #page_footer-wrap
+    position: absolute
+    display: block
+    padding-top: 6px
+    width: 100%
+
+    p
+      text-align: center
+      padding-bottom: 15px
+
+
+@import "effect"
